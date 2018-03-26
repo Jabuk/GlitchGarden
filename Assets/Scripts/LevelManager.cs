@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	void Start(){
+		if(SceneManager.GetActiveScene().buildIndex == 0){
+			Invoke("LoadNextScene", 3f);
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void LoadNextScene () {
+	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
+
+	public void LoadStartScreen(){
+	SceneManager.LoadScene("Start");
+	}
+
+	public void LoadEndScreen(){
+	SceneManager.LoadScene("End");
+	}
+
 }
