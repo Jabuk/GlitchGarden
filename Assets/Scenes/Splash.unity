@@ -152,11 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 82934742022775598, guid: d357b36e9cc07c345aa4f7cfee3de699,
+    - target: {fileID: 114951428853667748, guid: d357b36e9cc07c345aa4f7cfee3de699,
         type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
+      propertyPath: levelClipArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38cb77f0c542a9c46abf500e8be5aa4e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d357b36e9cc07c345aa4f7cfee3de699, type: 2}
   m_IsPrefabParent: 0

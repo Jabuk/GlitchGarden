@@ -23,4 +23,12 @@ public class LevelManager : MonoBehaviour {
 	SceneManager.LoadScene("End");
 	}
 
+	public void LoadScene(string scene){
+	SceneManager.LoadScene(scene);	
+	}
+
+	public void ExitGame(){
+		
+	}
+
 }

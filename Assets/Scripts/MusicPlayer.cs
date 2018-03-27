@@ -1,24 +1,34 @@
 ﻿using System;
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour {
+private AudioSource audioSource;
+public AudioClip[] levelClipArray;
 
-private AudioSource music;
-public AudioClip introClip;
-
-
-	// Use this for initialization
+	void Awake(){
+		DontDestroyOnLoad(gameObject);
+	}
 	void Start () {
 		
-	music = GetComponent<AudioSource>();
-	music.clip = introClip;
-	music.Play();
+	audioSource = GetComponent<AudioSource>();
+	audioSource.clip = levelClipArray[0];
+	audioSource.Play();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void OnEnable() {
+      SceneManager.sceneLoaded += OnSceneLoaded;
+  	}
+ 
+  	void OnDisable() {
+      SceneManager.sceneLoaded -= OnSceneLoaded;
+  	}
+ 
+  	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		audioSource.clip = levelClipArray[scene.buildIndex];
+		audioSource.loop = true;
+		audioSource.Play();
+
 	}
 }
